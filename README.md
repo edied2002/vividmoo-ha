@@ -2,7 +2,9 @@
 
 An unofficial cloud integration for Vividmoo (UBTech "airpet") self-cleaning litter boxes, built by
 reverse-engineering the Vividmoo Pet Android app (2.0.0). Not affiliated with or endorsed by Vividmoo or UBTech.
-Everything below was verified against the live cloud with a real box.
+Unless marked otherwise, everything below was verified against the live cloud with a real box.
+
+[![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/eddiedean)
 
 ## Features
 - **Sensors:** work mode and state (with live job timing), waste-bin level and uses since reset, last use,
@@ -98,6 +100,9 @@ Layout:
 - **`mqtt.py`:** the IM/MQTT session (TLS, port 21000).
 - **`coordinator.py`:** polling, push handling and commands.
 - **`frontend/vividmoo-card.js`:** the card, a classic script that also loads as a module.
+
+## Support
+If this integration is useful to you, you can [buy me a coffee on Ko-fi](https://ko-fi.com/eddiedean). ☕
 
 ## License
 MIT
