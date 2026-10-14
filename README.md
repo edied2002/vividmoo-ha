@@ -19,12 +19,18 @@ Everything below was verified against the live cloud with a real box.
 Settings writes (switches, schedules) aren't implemented.
 
 ## Install
-**HACS:** add this repository as a custom repository (category *Integration*), install
-**Vividmoo Litter Box**, and restart Home Assistant.
+[![Open your Home Assistant instance and open this repository inside HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=edied2002&repository=vividmoo-ha&category=integration)
+
+**HACS:** click the button above (or add `https://github.com/edied2002/vividmoo-ha` as a custom repository,
+category *Integration*), download **Vividmoo Litter Box**, and restart Home Assistant.
 
 **Manual:** copy `custom_components/vividmoo` into your `config/custom_components/` and restart.
 
-Then add **Vividmoo Litter Box** under Settings → Devices & services. You'll need your account and
+Then add the integration:
+
+[![Open your Home Assistant instance and start setting up the integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=vividmoo)
+
+or go to Settings → Devices & services → Add integration → **Vividmoo Litter Box**. You'll need your account and
 password, plus the app's **App ID** and **App Key** (next section). Account type, password encoding and API
 URL are pre-filled with the values the app uses.
 
