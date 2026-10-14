@@ -1,0 +1,149 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Vividmoo account",
+        "description": "App ID and App Key are the official app's request-signing values; they are not included with this integration (see the README for how to get them). Account type, password encoding and API URL are pre-filled with the values the app uses.",
+        "data": {
+          "account": "Email or phone",
+          "password": "Password",
+          "app_id": "App ID (X-UBT-AppId)",
+          "app_key": "App Key",
+          "account_type": "Account type",
+          "password_mode": "Password encoding",
+          "base_url": "API base URL",
+          "client_device_id": "Client device ID (leave empty to generate)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate Vividmoo",
+        "data": {
+          "account": "Email or phone",
+          "password": "Password",
+          "app_id": "App ID (X-UBT-AppId)",
+          "app_key": "App Key",
+          "account_type": "Account type",
+          "password_mode": "Password encoding",
+          "base_url": "API base URL",
+          "client_device_id": "Client device ID"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Login was rejected (credentials, account type, password encoding or app key).",
+      "cannot_connect": "Could not reach the Vividmoo cloud."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "enable_mqtt": "Receive live updates over MQTT (shares the account's single live session with the official app; while the app is open, one of them is disconnected)",
+          "mqtt_verify_tls": "Verify the MQTT broker's TLS certificate"
+        }
+      }
+    }
+  },
+  "selector": {
+    "password_mode": {
+      "options": {
+        "plain": "Plain text",
+        "md5": "MD5 hex"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "use_count": {
+        "name": "Uses since counter reset"
+      },
+      "waste_bin_level": {
+        "name": "Waste bin level"
+      },
+      "waste_bin_capacity": {
+        "name": "Waste bin capacity"
+      },
+      "last_use": {
+        "name": "Last use"
+      },
+      "last_cat": {
+        "name": "Last cat"
+      },
+      "last_weight": {
+        "name": "Last weight"
+      },
+      "last_duration": {
+        "name": "Last visit duration"
+      },
+      "work_mode": {
+        "name": "Work mode",
+        "state": {
+          "idle": "Idle",
+          "reset": "Resetting",
+          "clean": "Cleaning",
+          "smooth": "Leveling",
+          "clear": "Emptying"
+        }
+      },
+      "work_state": {
+        "name": "Work state",
+        "state": {
+          "idle": "Idle",
+          "running": "Running",
+          "blocked": "Blocked",
+          "paused": "Paused"
+        }
+      },
+      "wifi_network": {
+        "name": "Wi-Fi network"
+      },
+      "device_status": {
+        "name": "Cloud device status"
+      },
+      "visits_today": {
+        "name": "Visits today"
+      },
+      "visits_7d_avg": {
+        "name": "Visits per day (7-day average)"
+      },
+      "cat_weight": {
+        "name": "Cat weight"
+      }
+    },
+    "binary_sensor": {
+      "online": {
+        "name": "Online"
+      },
+      "waste_bin_full": {
+        "name": "Waste bin full"
+      },
+      "cat_inside": {
+        "name": "Cat inside"
+      }
+    },
+    "button": {
+      "clean": {
+        "name": "Clean"
+      },
+      "smooth": {
+        "name": "Level litter"
+      },
+      "empty": {
+        "name": "Empty litter (dumps ALL litter)"
+      },
+      "pause": {
+        "name": "Pause"
+      },
+      "resume": {
+        "name": "Resume"
+      },
+      "waste_bin_emptied": {
+        "name": "Waste bin emptied (reset counter)"
+      }
+    }
+  }
+}
