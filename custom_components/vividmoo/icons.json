@@ -1,0 +1,83 @@
+{
+  "entity": {
+    "sensor": {
+      "use_count": {
+        "default": "mdi:counter"
+      },
+      "waste_bin_level": {
+        "default": "mdi:delete-variant"
+      },
+      "waste_bin_capacity": {
+        "default": "mdi:delete-outline"
+      },
+      "last_cat": {
+        "default": "mdi:cat"
+      },
+      "visits_today": {
+        "default": "mdi:paw"
+      },
+      "visits_7d_avg": {
+        "default": "mdi:chart-line"
+      },
+      "work_mode": {
+        "default": "mdi:rotate-3d-variant",
+        "state": {
+          "idle": "mdi:sleep",
+          "clean": "mdi:broom",
+          "smooth": "mdi:waves",
+          "clear": "mdi:delete-empty",
+          "reset": "mdi:restore"
+        }
+      },
+      "work_state": {
+        "default": "mdi:state-machine",
+        "state": {
+          "idle": "mdi:check-circle-outline",
+          "running": "mdi:play-circle",
+          "paused": "mdi:pause-circle",
+          "blocked": "mdi:alert-circle"
+        }
+      },
+      "wifi_network": {
+        "default": "mdi:wifi"
+      },
+      "device_status": {
+        "default": "mdi:cloud-outline"
+      }
+    },
+    "binary_sensor": {
+      "cat_inside": {
+        "default": "mdi:cat",
+        "state": {
+          "off": "mdi:home-outline"
+        }
+      },
+      "waste_bin_full": {
+        "default": "mdi:delete-variant",
+        "state": {
+          "on": "mdi:delete-alert"
+        }
+      }
+    },
+    "button": {
+      "clean": {
+        "default": "mdi:broom"
+      },
+      "smooth": {
+        "default": "mdi:waves"
+      },
+      "empty": {
+        "default": "mdi:delete-empty"
+      },
+      "pause": {
+        "default": "mdi:pause"
+      },
+      "resume": {
+        "default": "mdi:play"
+      },
+      "waste_bin_emptied": {
+        "default": "mdi:delete-restore"
+      }
+    }
+  }
+}

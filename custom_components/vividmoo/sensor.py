@@ -95,6 +95,7 @@ SENSORS: tuple[VividmooSensorDescription, ...] = (
         key="last_weight",
         device_class=SensorDeviceClass.WEIGHT,
         state_class=SensorStateClass.MEASUREMENT,
+        suggested_display_precision=1,
         value_fn=lambda b: _record(b, "weight"),
     ),
     VividmooSensorDescription(
@@ -121,6 +122,7 @@ SENSORS: tuple[VividmooSensorDescription, ...] = (
         key="last_duration",
         device_class=SensorDeviceClass.DURATION,
         native_unit_of_measurement=UnitOfTime.SECONDS,
+        suggested_display_precision=0,
         value_fn=lambda b: _record(b, "costTime"),
     ),
     VividmooSensorDescription(
