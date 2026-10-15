@@ -221,7 +221,7 @@
         (s.hint ? '<div class="hint">' + escapeHtml(s.hint) + "</div>" : "") + "</div></div>" +
       '<div class="body">' +
         '<div class="bin tap"' + tappable(vm.info.bin) + ">" + gauge(vm.bin.level, vm.bin.full) +
-          '<div class="bin-label">Waste bin' + (vm.bin.uses !== null ? " · " + fmt(vm.bin.uses) + " uses" : "") + "</div></div>" +
+          '<div class="bin-label">Waste bin' + (vm.bin.uses !== null ? " · " + fmt(vm.bin.uses) + (vm.bin.uses === 1 ? " use" : " uses") : "") + "</div></div>" +
         '<div class="facts">' +
           '<div class="chip tap"' + tappable(vm.info.last) + '><ha-icon icon="mdi:cat"></ha-icon><span>' +
             (lastBits.length ? escapeHtml(lastBits.join(" · ")) : "No visits yet") + "</span></div>" +

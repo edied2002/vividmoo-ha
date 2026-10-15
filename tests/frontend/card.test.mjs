@@ -105,6 +105,8 @@ test("gauge, chips, stats, last seen; cloud strings escaped", () => {
   assert.equal(v.name, "Bathroom box"); assert.equal(v.last.seen, "2 hours ago");
   const html = renderCard(v);
   assert.match(html, />60%</); assert.match(html, /30 uses/); assert.match(html, /Mochi · 5\.9 kg · 36 s/);
+  assert.match(renderCard(vmFor({ "sensor.cato_uses": "1" })), / · 1 use<\/div>/);
+  assert.match(renderCard(vmFor({ "sensor.cato_uses": "0" })), / · 0 uses<\/div>/);
   assert.equal(escapeHtml(`<img onerror="x">`), "&lt;img onerror=&quot;x&quot;&gt;");
   assert.doesNotMatch(renderCard(vmFor({ "sensor.cato_last_cat": "<script>alert(1)</script>" })), /<script>/);
 });
