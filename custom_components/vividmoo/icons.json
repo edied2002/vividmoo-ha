@@ -66,9 +66,6 @@
       "smooth": {
         "default": "mdi:waves"
       },
-      "empty": {
-        "default": "mdi:delete-empty"
-      },
       "pause": {
         "default": "mdi:pause"
       },

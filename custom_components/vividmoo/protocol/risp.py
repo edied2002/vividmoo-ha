@@ -49,14 +49,13 @@ def crc8(data: bytes) -> int:
 
 # d2c1019 airpet_op_rq values, captured from the app (DeviceOperateRequest ordinals).
 OP_MODE_CLEAN = 1
-OP_MODE_EMPTY = 2  # INFERRED: the remaining OpMode ordinal (CLEAR); not captured yet
 OP_MODE_SMOOTH = 3
 OP_STATE_START = 1
 OP_STATE_PAUSE = 2
 OP_STATE_RESUME = 3
 # The state push reports airpet_work_mode (CLEAN=2, SMOOTH=3, CLEAR=4), a different numbering.
 # Pause/resume resend the running job's op_mode, as the app does.
-WORK_MODE_TO_OP_MODE = {2: OP_MODE_CLEAN, 3: OP_MODE_SMOOTH, 4: OP_MODE_EMPTY}
+WORK_MODE_TO_OP_MODE = {2: OP_MODE_CLEAN, 3: OP_MODE_SMOOTH}
 DEV_MAIN = 2
 CMD_OPERATE = 1019
 CMD_ALL_STATE = 1021

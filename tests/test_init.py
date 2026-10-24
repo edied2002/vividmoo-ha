@@ -287,11 +287,10 @@ async def test_missing_ack_raises(hass: HomeAssistant, mock_api, mock_mqtt, monk
         await _press(hass, "button.kitchen_box_level_litter")
 
 
-async def test_empty_button_disabled_by_default(hass: HomeAssistant, mock_api, mock_mqtt):
+async def test_no_empty_button(hass: HomeAssistant, mock_api, mock_mqtt):
     FakeBox(hass, mock_mqtt)
     await _setup(hass)
-    entry = er.async_get(hass).async_get("button.kitchen_box_empty_litter_dumps_all_litter")
-    assert entry is not None and entry.disabled_by is er.RegistryEntryDisabler.INTEGRATION
+    assert er.async_get(hass).async_get("button.kitchen_box_empty_litter_dumps_all_litter") is None
     assert hass.states.get("button.kitchen_box_clean") is not None
 
 

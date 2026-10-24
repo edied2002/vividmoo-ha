@@ -132,9 +132,6 @@
       "smooth": {
         "name": "Level litter"
       },
-      "empty": {
-        "name": "Empty litter (dumps ALL litter)"
-      },
       "pause": {
         "name": "Pause"
       },

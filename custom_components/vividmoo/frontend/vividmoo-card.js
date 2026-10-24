@@ -27,7 +27,7 @@
     last_use: "sensor", last_cat: "sensor", last_weight: "sensor", last_duration: "sensor",
     cat_weight: "sensor", visits_today: "sensor", visits_7d_avg: "sensor",
     online: "binary_sensor", waste_bin_full: "binary_sensor", cat_inside: "binary_sensor",
-    clean: "button", smooth: "button", empty: "button", pause: "button", resume: "button",
+    clean: "button", smooth: "button", pause: "button", resume: "button",
     waste_bin_emptied: "button",
   };
 
@@ -127,7 +127,7 @@
         seen: ents.last_use, today: ents.visits_today, avg: ents.visits_7d_avg, catWeight: ents.cat_weight,
       },
       actions: {
-        clean: exists("clean"), smooth: exists("smooth"), empty: exists("empty"),
+        clean: exists("clean"), smooth: exists("smooth"),
         pause: exists("pause") && status.kind === "running",
         resume: exists("resume") && status.kind === "paused",
         emptied: exists("waste_bin_emptied"),
@@ -236,7 +236,6 @@
         (a.pause ? btn("pause", "mdi:pause", "Pause", { disabled: offline }) : "") +
         (a.resume ? btn("resume", "mdi:play", "Resume", { disabled: offline }) : "") +
         (a.emptied ? btn("waste_bin_emptied", "mdi:delete-restore", "Bin emptied") : "") +
-        (a.empty ? btn("empty", "mdi:delete-alert", "Empty litter", { danger: true, disabled: offline || vm.busy }) : "") +
       "</div></ha-card>";
   }
 
@@ -315,7 +314,6 @@
   ].join("\n");
 
   var CONFIRM = {
-    empty: "Empty litter dumps ALL litter into the waste drawer. Continue?",
     waste_bin_emptied: "Reset the waste bin counter? Do this after emptying the drawer.",
   };
 

@@ -11,9 +11,8 @@ Unless marked otherwise, everything below was verified against the live cloud wi
   last cat, last weight, last visit duration, visits today, 7-day visit average, cat weight
   (`state_class: measurement`, so long-term statistics graph it), Wi-Fi network and cloud status.
 - **Binary sensors:** online, waste bin full, and **cat inside** (pushed by the box in real time on entry and exit).
-- **Buttons:** Clean, Level litter, Pause, Resume, Waste bin emptied (resets the cloud's use counter, like the app), and
-  Empty litter. **Empty litter is experimental:** it dumps *all* litter into the waste drawer, it's disabled by
-  default, and its command value is inferred from the app's code, not captured from a real run. Commands are byte-identical to the app's and wait for the box's acknowledgement.
+- **Buttons:** Clean, Level litter, Pause, Resume and Waste bin emptied (resets the cloud's use counter, like the app).
+  Commands are byte-identical to the app's and wait for the box's acknowledgement.
 - **Live updates (optional, off by default):** the cloud MQTT channel gives real-time state. On every
   (re)connect the integration asks the box for its full state, so the status is never unknown.
 - **Dashboard card,** served by the integration itself (see below).
@@ -74,7 +73,7 @@ It shows:
   ring timed from the box's real start, pause and finish.
 - **The waste-bin gauge.**
 - **Visits:** the last visit (cat · weight · duration), "last seen", visits today and the 7-day average.
-- **Buttons:** Clean, Level, Pause/Resume, Bin emptied, and Empty (shown only once its entity is enabled).
+- **Buttons:** Clean, Level, Pause/Resume, and Bin emptied.
 
 Tap any value to open its history.
 

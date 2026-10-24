@@ -17,7 +17,7 @@ function makeHass(states = {}, extra = {}) {
     last_weight: "sensor.cato_last_weight", last_duration: "sensor.cato_duration", cat_weight: "sensor.cato_cat_weight",
     visits_today: "sensor.cato_visits_today", visits_7d_avg: "sensor.cato_visits_avg", online: "binary_sensor.cato_online",
     waste_bin_full: "binary_sensor.cato_bin_full", clean: "button.cato_clean", smooth: "button.cato_level",
-    empty: "button.cato_empty", pause: "button.cato_pause", resume: "button.cato_resume", waste_bin_emptied: "button.cato_emptied",
+    pause: "button.cato_pause", resume: "button.cato_resume", waste_bin_emptied: "button.cato_emptied",
     cat_inside: "binary_sensor.cato_cat_inside",
   };
   const entities = Object.fromEntries(Object.entries(ids).map(([tk, id]) => [id, { entity_id: id, device_id: DEV, platform: "vividmoo", translation_key: tk }]));
@@ -72,7 +72,7 @@ test("runs as a classic script in a fresh context and registers the card once", 
 test("resolves only this device's vividmoo entities, by translation key and domain", () => {
   const ents = resolveEntities(makeHass(), DEV);
   assert.equal(ents.work_mode, "sensor.cato_work_mode");
-  assert.equal(Object.keys(ents).length, 20);
+  assert.equal(Object.keys(ents).length, 19);
   assert.ok(!Object.values(ents).includes("sensor.other") && !Object.values(ents).includes("sensor.box2_mode"));
 });
 
@@ -95,9 +95,8 @@ test("paused smooth offers Resume; idle Ready; unknown hints; offline wins", () 
   assert.equal(v.status.kind, "offline"); assert.match(renderCard(v), /data-action="clean" disabled/);
 });
 
-test("Empty hidden while disabled, shown (danger) once enabled", () => {
-  assert.doesNotMatch(renderCard(vmFor()), /data-action="empty"/);
-  assert.match(renderCard(vmFor({ "button.cato_empty": "unknown" })), /class="action danger" data-action="empty"/);
+test("No Empty action, even if an empty button entity exists", () => {
+  assert.doesNotMatch(renderCard(vmFor({ "button.cato_empty": "unknown" })), /data-action="empty"/);
 });
 
 test("gauge, chips, stats, last seen; cloud strings escaped", () => {

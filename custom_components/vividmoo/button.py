@@ -23,14 +23,6 @@ class VividmooButtonDescription(ButtonEntityDescription):
 BUTTONS: tuple[VividmooButtonDescription, ...] = (
     VividmooButtonDescription(key="clean", op_mode=risp.OP_MODE_CLEAN, op_state=risp.OP_STATE_START),
     VividmooButtonDescription(key="smooth", op_mode=risp.OP_MODE_SMOOTH, op_state=risp.OP_STATE_START),
-    # Empty dumps ALL litter into the waste drawer. Its op_mode (2) is inferred, not captured,
-    # so the entity is disabled by default and must be enabled deliberately.
-    VividmooButtonDescription(
-        key="empty",
-        op_mode=risp.OP_MODE_EMPTY,
-        op_state=risp.OP_STATE_START,
-        entity_registry_enabled_default=False,
-    ),
     VividmooButtonDescription(key="pause", op_mode=None, op_state=risp.OP_STATE_PAUSE),
     VividmooButtonDescription(key="resume", op_mode=None, op_state=risp.OP_STATE_RESUME),
 )

@@ -74,6 +74,5 @@ WORK_MODES = {0: "idle", 1: "reset", 2: "clean", 3: "smooth", 4: "clear"}
 WORK_MODE_IDLE = 0
 WORK_STATE_RUNNING = 1
 # Observed run times (pauses excluded): clean 90 s (logpatch2 capture) and 89 s (HA test); smooth 50 s.
-# Empty hasn't been observed yet.
 OBSERVED_JOB_SECONDS = {2: 90, 3: 50}
 WORK_STATES = {0: "idle", 1: "running", 2: "blocked", 3: "paused"}
