@@ -19,8 +19,12 @@ if _PKG not in sys.modules:
     sys.modules[_PKG] = pkg
 api_mod = importlib.import_module(f"{_PKG}.api")
 
-# The Home Assistant test harness blocks sockets; these tests use a local server.
-pytestmark = pytest.mark.enable_socket
+
+# The Home Assistant test harness blocks sockets; these tests use a local server. A fixture
+# (not the enable_socket marker) so it is in place before the server fixture opens its port.
+@pytest.fixture(autouse=True)
+def _allow_local_server(socket_enabled):
+    """Allow the local fake server's sockets."""
 
 HA_USER_AGENT = "HomeAssistant/2026.2.3 aiohttp/3.13.3 Python/3.13"
 
